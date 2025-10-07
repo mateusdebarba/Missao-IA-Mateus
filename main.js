@@ -1,6 +1,8 @@
-
-
-
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
 
 
 const perguntas = [
@@ -22,7 +24,7 @@ const perguntas = [
         alternativas: [
             {
                 texto: " (A) Bocha Mestra. ",
-                afirmacao: " (A) No contexto do jogo, não existe uma "bocha mestra"; o termo "bocha" designa as bolas maiores que são utilizadas pelos jogadores para pontuar.",
+                afirmacao: " (A) No contexto do jogo, não existe uma "bocha mestra"; o termo "bocha" designa as bolas maiores que são utilizadas pelos jogadores para pontuar.";
             },
             {
                 texto: " (B) Balim.",
@@ -70,3 +72,13 @@ const perguntas = [
         ]
     },
 ];
+
+let atual = 0;
+let perguntaAtual;
+  
+function mostraPergunta(){
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+}
+
+mostraPergunta();
